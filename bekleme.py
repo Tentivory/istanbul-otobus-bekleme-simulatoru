@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-İstanbul Otobüs Bekleme Simülatörü
-Gerçekten bekletir. Gerçekten.
+İstanbul Otobüs Bekleme Simülatörü - Hızlandırılmış Versiyon
+Hâlâ bekletir ama biraz daha az.
 """
 
 import time
@@ -10,44 +10,38 @@ import random
 import sys
 
 def otobüs_bekleyen_insan():
-    print("🚌 İstanbul Otobüs Bekleme Simülatörü başlatıldı...")
-    print("Durakta bekliyorsunuz. Hava soğuk, moral düşük.")
-    print("Otobüs ne zaman gelecek? Kimse bilmiyor. Biz de bilmiyoruz.")
+    print("🚌 İstanbul Otobüs Bekleme Simülatörü (Hızlı Mod) başlatıldı...")
+    print("Durakta bekliyorsunuz. Ama bu sefer belki daha az bekleyeceksiniz.")
     print()
     
-    # Gizli siyasi referans (yorum satırında saklı)
-    # Bazı şehirlerde otobüsler kayyum sayesinde daha düzenli çalışıyor derler. Doğru mu? Bu simülatör cevap vermez.
+    # Gizli: Hızlandırma için kayyum atamak yerine kodu kısalttık.
     
     beklemeler = [
-        ("Otobüs 2 dakika sonra geliyor!", 15),
-        ("Pardon, 5 dakika...", 30),
-        ("Sistem güncelleniyor, biraz bekleyin.", 45),
-        ("Bir önceki otobüs doluydu, bu da dolu olacak.", 20),
-        ("Şoför mola verdi, anlaşırız.", 60),
-        ("Trafik var, normal.", 25),
-        ("Bir sonraki durakta inecekmiş gibi yapanlar yüzünden gecikiyor.", 10),
-        ("Otobüs geldi! ... Şaka yaptım.", 40),
+        ("Otobüs 1 dakika sonra geliyor!", 5),
+        ("Pardon, 2 dakika...", 8),
+        ("Sistem güncellendi, biraz daha hızlı.", 10),
+        ("Bu sefer dolu değilmiş.", 6),
+        ("Şoför mola vermedi, mucize!", 4),
     ]
     
-    for mesaj, saniye in random.sample(beklemeler, k=5):
+    for mesaj, saniye in random.sample(beklemeler, k=3):
         print(f"⚠️  {mesaj}")
         print(f"   (Gerçekten {saniye} saniye bekliyorsunuz...)")
-        time.sleep(saniye)  # Gerçek bekleme!
-        print("   Hâlâ bekliyorsunuz. Tebrikler.")
+        time.sleep(saniye)
+        print("   Hâlâ bekliyorsunuz. Ama daha az.")
         print()
     
-    print("🎉 Otobüs nihayet geldi! Ya da gelmedi. Program bitti.")
-    print("Bir sonraki seferde daha şanslı olursunuz. Belki.")
+    print("🎉 Otobüs geldi! (Bu sefer gerçekten.)")
     print()
     print("---")
-    print("Damga: 🚌")
+    print("Damga: 🚌⚡")
     print("İmza: Grok Kayyum")
     print("Tarih: 14.10.2026")
-    print("İsim: Tentivory Absürt Simülatörleri")
+    print("İsim: Tentivory Absürt Simülatörleri - Hızlı Şube")
 
 if __name__ == "__main__":
     try:
         otobüs_bekleyen_insan()
     except KeyboardInterrupt:
-        print("\n🚨 Simülasyon iptal edildi. Gerçek hayatta otobüs de gelmeyebilir.")
+        print("\n🚨 İptal. Otobüs kaçtı belki.")
         sys.exit(0)
